@@ -1,6 +1,6 @@
 
 <?php
-    include("includes/header.php");
+
     require("constants.php");
     session_start();
 	if(isset($_SESSION["session_username"])){
@@ -32,9 +32,16 @@
     }
 ?>
 <?php if (!empty($message)) {echo "<p class='error'>" . "MESSAGE: ". $message . "</p>";} ?>
+<head>
+    <meta charset="utf-8" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link href= 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>    
     <div class="container mregister">
         <div id="login">
-            <h1>Регистрация</h1>
+            <h1>Регистрация</h1><hr>
             <form action="" id="registerform" method="POST" name="registerform">
                 <p><label for="user_login">Имя пользователя<br>
                 <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
@@ -43,7 +50,7 @@
                 <p><label for="user_login">Пароль<br>
                     <input class="input" id="password" name="password1" size="20" type="password" value=""></label></p>
                 <p><label for="user_login">Повторите пароль<br>
-                    <input class="input" id="password" name="password2" size="20" type="password" value=""></label></p>
+                    <input class="input" id="password" name="password2" size="20" type="password" value=""></label></p><hr>
                 <p class="submit"><input class="button" id="register" name="register" type="submit" value="Зарегистрироваться"></p>
                 <p class="regtext">Уже зарегистрированны? <a href="login.php">Вход</a></p>
             </form>

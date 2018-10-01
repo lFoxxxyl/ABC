@@ -1,5 +1,4 @@
-<?php
-    include("includes/header.php"); 
+<?php 
     session_start();
     
     require("constants.php");
@@ -40,14 +39,21 @@
 ?>
 <?php if (!empty($message)) {echo "<p class='error'>" . "MESSAGE: ". $message . "</p>";} 
 ?>
+<head>
+    <meta charset="utf-8" />
+    <title>Вход</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link href= 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
     <div class="container mlogin">
         <div id="login">
-            <h1>Вход</h1>
+            <h1>Вход</h1><hr>
             <form action="" id="loginform" method="POST" name="loginform">
                 <p><label for="user_login">Имя пользователя<br>
                 <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
                 <p><label for="user_login">Пароль<br>
-                <input class="input" id="password" name="password" size="20" type="password" value=""></label></p>
+                <input class="input" id="password" name="password" size="20" type="password" value=""></label></p><hr>
                 <p class="submit"><input class="button" name="login" type="submit" value="Войти"></p>
                 <p class="regtext">Ещё не зарегистрированны? <a href="register.php">Регистрация</a></p>
             </form>
