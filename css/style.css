@@ -3,7 +3,7 @@
     margin: 0;
 }
 body{
-    background-image: url("../img/bg.png");
+    background-image: url("../img/bg.jpg");
     font-family: 'Open Sans', sans-serif;
     padding: 0;
 }
@@ -41,23 +41,24 @@ a{
 /*ШАПКА________________________________________________________________*/
 header{
     width: 100%;
-    background-color: rgba(73, 67, 67, 0.5);
+    background-color: rgb(162, 158, 177);
     color: #fff;
     border-bottom: 1px solid #05037a;
     
 }
-header p{
+header .huser{
     padding: 1%; 
+    display: inline-block;
 }
-header span {
+header .hbutton{
  
     font-weight: 400;
     color: #fff;
     float: right;
-
+    padding: 1%;
 }
-header span:hover{
-    background-color: #05037a
+header .hbutton:hover{
+    background-color: #05037a;
 }
 
 /*КОНТЕЙНЕРЫ___________________________________________________________*/
@@ -68,14 +69,15 @@ header span:hover{
 	overflow: hidden;
 	width: 400px;
 	height: auto;
-    background: rgba(73, 67, 67, 0.5);
+    background: rgb(162, 158, 177);
     border-radius: 10px;
     border: 1px solid #05037a;
 }
 #note {
     width: 400px;
 	margin: auto;
-	padding-bottom: 15px;
+    padding-bottom: 15px;
+    
 }
 .textarea{
     width: 100%;
@@ -123,7 +125,25 @@ header span:hover{
     -moz-box-shadow: 0 0 3px 0 #05037a;
     box-shadow: 0 0 3px 0 #05037a;
 }
-	/*КНОПКИ__________________________________________________________*/
+
+/*POPUP___________________________________________________________*/
+
+.b-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.closepopup{
+    font-weight: 400;
+    color: #fff;
+    float: right;
+    margin-right: 15px;
+}
+
+/*КНОПКИ__________________________________________________________*/
 	
 .button{
 	border: solid 1px #05037a;

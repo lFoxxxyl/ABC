@@ -5,7 +5,7 @@
 
 <?php
 session_start ();
-$url='https://oauth.vk.com/authorize?client_id='.$id_app.'&redirect_uri='.$url_script.'&response_type=code';
+$url='https://oauth.vk.com/authorize?client_id='.$id_app.'&redirect_uri='.$url_script.'&response_type=code&scope=email';
 header("Location: $url");
 if  (!empty($_GET ['code']))  {
  $id_app     =     '6703231' ;                      //Айди приложения

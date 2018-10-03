@@ -13,7 +13,8 @@
         $email= mysqli_real_escape_string($db, trim($_POST['email']));
         $password1 = mysqli_real_escape_string($db, trim($_POST['password1']));
         $password2 = mysqli_real_escape_string($db, trim($_POST['password2']));
-        if(!empty($username) && !empty($password1) && !empty($password2)&& !empty($email) && ($password1 == $password2)) {
+        if(!empty($username) && !empty($password1) && !empty($password2)&& !empty($email) ) {
+            if($password1 == $password2){
             $query = "SELECT * FROM `users` WHERE username = '$username'";
             $data = mysqli_query($db, $query);
             if(mysqli_num_rows($data) == 0) {
@@ -27,11 +28,17 @@
             else {
                 $message = 'Логин уже существует';
             }
-    
+        }
+        else {
+            $message = 'Пароли не совпадают!';
+        } 
+        }
+        else{
+            $message = 'Не все поля заполнены!';
         }
     }
 ?>
-<?php if (!empty($message)) {echo "<p class='error'>" . "MESSAGE: ". $message . "</p>";} ?>
+<?php if (!empty($message)) {echo "<p class='error'>" . $message . "</p>";} ?>
 <head>
     <meta charset="utf-8" />
     <title>Регистрация</title>

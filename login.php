@@ -29,15 +29,15 @@
 	                }
                 } 
                 else {
-	                 $message = "Invalid username or password!";
+	                 $message = "Неверный логин или пароль!";
                 }
     } 
     else {
-        $message = "All fields are required!";
+        $message = "Не все поля заполнены!";
 	}
     }
 ?>
-<?php if (!empty($message)) {echo "<p class='error'>" . "MESSAGE: ". $message . "</p>";} 
+<?php if (!empty($message)) {echo "<p class='error'>" . $message . "</p>";} 
 ?>
 <head>
     <meta charset="utf-8" />
