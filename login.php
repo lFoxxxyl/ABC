@@ -19,11 +19,12 @@
                     while($row=mysqli_fetch_assoc($data)){
 	                    $dbusername=$row['username'];
                         $dbpassword=$row['password'];
-                        
+                        $dbid=$row['user_id'];
                     }              
                     if($username == $dbusername && $password == $dbpassword){
 
-	                    $_SESSION['session_username']=$username;	 
+                        $_SESSION['session_username']=$username;
+                        $_SESSION['session_user_id']=$dbid;
                         /* Перенаправление браузера */
                         header("Location: intropage.php");
 	                }
@@ -48,7 +49,7 @@
 <body>
     <div class="container mlogin">
         <div id="login">
-            <h1>Вход</h1><hr>
+            <h1>Вход</h1>
             <form action="" id="loginform" method="POST" name="loginform">
                 <p><label for="user_login">Имя пользователя<br>
                 <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>

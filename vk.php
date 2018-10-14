@@ -22,22 +22,30 @@ $_SESSION['session_username']= $uinf['response'][0]['first_name'] . " " . $uinf[
  require("constants.php");
 	$db = mysqli_connect(DB_SERVER, DB_USER, DB_PASS,DB_NAME) or die(mysql_error());
     mysqli_query($db, "SET NAMES utf8");
+    $email=mysqli_real_escape_string($db, trim($token['email']));
     $vk_id=mysqli_real_escape_string($db, trim($token['user_id']));
     $token=mysqli_real_escape_string($db, trim($token['access_token']));
     $username = mysqli_real_escape_string($db, trim($uinf['response'][0]['first_name'] . " ". $uinf['response'][0]['last_name'] ));
-            $query = "SELECT * FROM `users_vk` WHERE vk_id = '$vk_id'";
+            $query = "SELECT * FROM `users` WHERE social_id = '$vk_id'";
             $data = mysqli_query($db, $query);
             if(mysqli_num_rows($data) == 0) {
-                $query ="INSERT INTO `users_vk` (vk_id,token, username) VALUES ('$vk_id','$token', '$username')";
+                $query ="INSERT INTO `users` (email, username,auth_via,social_id) VALUES ('$email','$username','vk' ,'$vk_id')";
                 mysqli_query($db,$query);
-                mysqli_close($db);
-                header("Location: intropage.php");
+                $_SESSION['session_user_id']=mysqli_insert_id($db);
             }
-            if(mysqli_num_rows($data) == 1) {
-                $query="UPDATE `users_vk` SET token='$token', username='$username'";
-                mysqli_query($db, $query);
-                mysqli_close($db);
-                header("Location: /ABC/intropage.php");
+            else if(mysqli_num_rows($data) == 1){
+                $row = mysqli_fetch_row($data);
+                $_SESSION['session_user_id']=$row[0];
+                if($email!=$row[1]){
+                    $query="UPDATE `users` SET email='$email' WHERE social_id = '$vk_id'";
+                    mysqli_query($db, $query);
+                }
+                if($username!=$row[2]){
+                    $query="UPDATE `users` SET username='$username'WHERE social_id = '$vk_id'";
+                    mysqli_query($db, $query);
+                }
             }
+            mysqli_close($db);
+            header("Location: intropage.php");
     }
 ?>

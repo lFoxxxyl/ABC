@@ -18,7 +18,7 @@
             $query = "SELECT * FROM `users` WHERE username = '$username'";
             $data = mysqli_query($db, $query);
             if(mysqli_num_rows($data) == 0) {
-                $query ="INSERT INTO `users` (username,email, password) VALUES ('$username','$email', ('$password2'))";
+                $query ="INSERT INTO `users` (username,email, password,auth_via) VALUES ('$username','$email', ('$password2'),'native')";
                 mysqli_query($db,$query);
                 $message = 'Всё готово, можете авторизоваться';
                 mysqli_close($db);
@@ -48,7 +48,7 @@
 <body>    
     <div class="container mregister">
         <div id="login">
-            <h1>Регистрация</h1><hr>
+            <h1>Регистрация</h1>
             <form action="" id="registerform" method="POST" name="registerform">
                 <p><label for="user_login">Имя пользователя<br>
                 <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>

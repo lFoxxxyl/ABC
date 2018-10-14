@@ -43,35 +43,33 @@ header{
     width: 100%;
     background-color: rgb(162, 158, 177);
     color: #fff;
-    border-bottom: 1px solid #05037a;
-    
+    box-shadow:5px 5px 5px  rgb(170, 169, 177,0.5);
 }
 header .huser{
     padding: 1%; 
     display: inline-block;
 }
 header .hbutton{
- 
     font-weight: 400;
     color: #fff;
     float: right;
     padding: 1%;
+
 }
 header .hbutton:hover{
-    background-color: #05037a;
+    background-color: rgb(119, 119, 253);
 }
 
 /*КОНТЕЙНЕРЫ___________________________________________________________*/
 
 .container{
-    padding: 25px 16px 0px 10px;
+    
 	font-weight: 400;
 	overflow: hidden;
 	width: 400px;
 	height: auto;
-    background: rgb(162, 158, 177);
-    border-radius: 10px;
-    border: 1px solid #05037a;
+    background: rgb(170, 169, 177);
+   
 }
 #note {
     width: 400px;
@@ -82,12 +80,12 @@ header .hbutton:hover{
 .textarea{
     width: 100%;
     height: 100px;
-    border-radius: 5px;
-    border: 1px solid #000000;
+    outline: none;
 }
 .container h1 {
+    background: rgb(119, 119, 253);
 	color: #fff;
-	text-align: center;
+	padding-left: 15px;
 	font-weight: 300; 
 }
 .container p{
@@ -105,7 +103,7 @@ header .hbutton:hover{
 #login {
     width: 400px;
 	margin: auto;
-	padding-bottom: 15px;
+	
 }
 .container input[type=text],.container input[type=password],.container input[type=email] {
 	background: #fff;
@@ -115,17 +113,106 @@ header .hbutton:hover{
 	padding: 3px;
     margin: 0 6px 5px 0;
     outline: none;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    
 }
 	
-.container form .input:focus {
-	border: 1px solid #05037a;
-    -webkit-box-shadow: 0 0 3px 0 #05037a;
-    -moz-box-shadow: 0 0 3px 0 #05037a;
-    box-shadow: 0 0 3px 0 #05037a;
-}
 
+/*SIDEBAR_________________________________________________________*/
+.sidebar{
+    width: 20%;
+    float: left;
+    height: auto;
+}
+.inner-sidebar{
+    background-color: rgb(170, 169, 177);
+    margin-bottom: 10px;
+    box-shadow:5px 5px 5px  rgb(170, 169, 177,0.5);
+}
+.inner-sidebar p{
+    color: #fff;
+    font-weight: 400;
+    padding: 5px;
+}
+.inner-sidebar h1{
+    background-color: rgb(119, 119, 253);
+    color: #fff;
+    text-align: center;
+    font-weight: 400; 
+    font-size: 20px;
+    padding: 5px;
+    
+    
+}
+.inner-sidebar h2{
+    background-color: rgb(169, 169, 255);
+    color: #fff;
+    text-align: right;
+    font-weight: 400; 
+    font-size: 14px;
+    padding: 5px;
+
+}
+.inner-sidebar span{
+    float: left;
+    
+}
+/*CONTENT_________________________________________________________*/
+.content{
+    padding-left: 10%;
+    width: 40%;
+    height: auto;
+    float: left;
+
+}
+.inner-content{
+    background-color: rgb(170, 169, 177);
+    margin-bottom: 10px;
+    box-shadow:5px 5px 5px  rgb(170, 169, 177,0.5);
+}
+.inner-content p{
+    color: #fff;
+    font-weight: 400;
+    padding: 5px;
+}
+.inner-content h1{
+    background-color: rgb(119, 119, 253);
+    color: #fff;
+    text-align: center;
+    font-weight: 400; 
+    font-size: 20px;
+    padding: 5px;
+    
+}
+.inner-content h2{
+    background-color: rgb(169, 169, 255);
+    color: #fff;
+    text-align: left;
+    font-weight: 400; 
+    font-size: 14px;
+    padding: 5px;
+    
+}
+.inner-content span{
+    float: right;
+}
+.inner-content a{
+    color: #fff;
+    text-align: right;
+    font-weight: 400; 
+    font-size: 14px;
+    padding-left: 5px;
+}
+.inner-content img{
+    height: 14px;
+}
+.inner-content textarea{
+    resize: none;
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 400;
+    width: 100%;
+    overflow: hidden;
+}
 /*POPUP___________________________________________________________*/
 
 .b-popup{
@@ -136,6 +223,7 @@ header .hbutton:hover{
     position:fixed;
     top:0px;
 }
+
 .closepopup{
     font-weight: 400;
     color: #fff;
@@ -146,17 +234,15 @@ header .hbutton:hover{
 /*КНОПКИ__________________________________________________________*/
 	
 .button{
-	border: solid 1px #05037a;
-	background: #0004ff;
+	border: solid 1px rgb(119, 119, 253);;
+	background: rgb(169, 169, 255);
     color: #fff;
 	padding: 7px 12px;
-    border-radius:4px;
 	float: right;
     cursor: pointer;
     margin-bottom: 15px;
 }
 	
 .button:hover{
-	background: #05037a;
+	background: rgb(119, 119, 253);
 }
-
